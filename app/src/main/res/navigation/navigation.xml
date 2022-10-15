@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.debtabase.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_customerListFragment"
+            app:destination="@id/customerListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.debtabase.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/customerListFragment"
+        android:name="com.example.debtabase.CustomerListFragment"
+        android:label="fragment_customer_list"
+        tools:layout="@layout/fragment_customer_list" >
+        <action
+            android:id="@+id/action_customerListFragment_to_customerInfoFragment"
+            app:destination="@id/customerInfoFragment" />
+        <action
+            android:id="@+id/action_customerListFragment_to_customerDebtFragment"
+            app:destination="@id/customerDebtFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerInfoFragment"
+        android:name="com.example.debtabase.CustomerInfoFragment"
+        android:label="fragment_customer_info"
+        tools:layout="@layout/fragment_customer_info" />
+    <fragment
+        android:id="@+id/customerDebtFragment"
+        android:name="com.example.debtabase.CustomerDebtFragment"
+        android:label="fragment_customer_debt"
+        tools:layout="@layout/fragment_customer_debt" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.debtabase.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+</navigation>
