@@ -2,4 +2,12 @@
     <string name="app_name">Debtabase</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="debt">debt</string>
+    <string name="welcome_to_debtabase_app_your_no_1_helper_to_manage_your_business_debt_management">Welcome to Debtabase App! Your no. 1 helper to manage your business debt management.</string>
+    <string name="debtabase">DEBTABASE</string>
+    <string name="register_customer">REGISTER CUSTOMER</string>
+    <string name="customer_database">CUSTOMER DATABASE</string>
+    <string name="textview">TextView</string>
+    <string name="customer_registration">CUSTOMER REGISTRATION</string>
+    <string name="customer_database1">CUSTOMER DATABASE</string>
 </resources>

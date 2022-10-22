@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".HomeFragment">
 
@@ -7,7 +8,56 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/homeConstraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#673AB7">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="370dp"
+            android:layout_height="259dp"
+            android:layout_marginTop="188dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/debt"
+            android:src="@drawable/debt2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="111dp"
+            android:layout_marginTop="101dp"
+            android:text="@string/textview"
+            android:textColor="#EFF0F4"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="DEBTABASE" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="227dp"
+            android:layout_height="59dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="164dp"
+            android:background="@drawable/btn_orange_bg"
+            android:text="@string/customer_database1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="230dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="96dp"
+            android:background="@drawable/btn_orange_bg"
+            android:text="@string/customer_registration"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
