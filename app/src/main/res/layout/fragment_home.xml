@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".HomeFragment">
 
@@ -7,7 +8,71 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/homeConstraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#6446b9">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="354dp"
+            android:layout_height="253dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="29dp"
+            android:contentDescription="@string/debt"
+            android:src="@drawable/debt2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            android:layout_width="227dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="51dp"
+            android:layout_marginEnd="92dp"
+            android:background="@drawable/btn_orange_bg"
+            android:text="@string/customer_database1"
+            android:textColor="#FDF8F8"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button4"
+            android:layout_width="230dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="89dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="92dp"
+            android:layout_marginBottom="93dp"
+            android:background="@drawable/btn_orange_bg"
+            android:text="@string/customer_registration"
+            android:textColor="#FDF8F8"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="182dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="152dp"
+            android:text="@string/debtabase1"
+            android:textColor="#FDF8F8"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.531"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
