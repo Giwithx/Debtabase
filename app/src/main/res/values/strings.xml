@@ -11,4 +11,9 @@
     <string name="customer_registration">CUSTOMER REGISTRATION</string>
     <string name="customer_database1">CUSTOMER DATABASE</string>
     <string name="debtabase1">DEBTABASE</string>
+    <string name="your_no_1_debt_monitoring_mobile_application">Your no. 1 debt monitoring mobile application</string>
+    <string name="welcome_to_debtabase">WELCOME TO DEBTABASE!</string>
+    <string name="img">img</string>
+    <string name="f">f</string>
+    <string name="img2">img2</string>
 </resources>
