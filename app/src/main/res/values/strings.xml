@@ -16,4 +16,20 @@
     <string name="img">img</string>
     <string name="f">f</string>
     <string name="img2">img2</string>
+    <string name="regimg">regimg</string>
+    <string name="customer_registration1">Customer Registration</string>
+    <string name="cancel">CANCEL</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="add">+</string>
+    <string name="sub">-</string>
+    <string name="save">SAVE</string>
+    <string name="save_products">SAVE PRODUCTS</string>
+    <string name="price">Price</string>
+    <string name="products_goods_purchased">Products/Goods Purchased</string>
+    <string name="due_date">Due Date</string>
+    <string name="due_balance">Due Balance</string>
+    <string name="first_name">First Name</string>
+    <string name="product_name">Product Name</string>
+    <string name="last_name">Last Name</string>
 </resources>
