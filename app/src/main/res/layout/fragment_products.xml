@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ProductsFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.debtabase.ProductFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,62 +10,202 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txtProdInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="164dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="60dp"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/product_information"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgprod"
+            android:layout_width="51dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="98dp"
+            android:contentDescription="@string/prodimg"
+            app:layout_constraintEnd_toStartOf="@+id/txtProdInfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/prod" />
+
+
+        <TextView
+            android:id="@+id/txtProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="152dp"
             android:fontFamily="@font/bebas_neue"
             android:text="@string/products_goods_purchased"
             android:textColor="#000000"
-            android:textSize="34sp"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/txtProdInfo" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="313dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="8dp"
+            android:id="@+id/txtProdName"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginEnd="86dp"
             android:ems="10"
             android:fontFamily="@font/raleway"
-            android:hint="@string/product_name"
+            android:hint="@string/enter_product_name"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:textAlignment="center"
             android:textColor="#000000"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/txtProducts" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/txtPrices"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="330dp"
             android:fontFamily="@font/bebas_neue"
-            android:text="Price"
+            android:text="@string/price"
             android:textColor="#000000"
-            android:textSize="34sp"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/txtProdName" />
+
 
         <EditText
-            android:id="@+id/editTextNumberDecimal"
-            android:layout_width="313dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="8dp"
+            android:id="@+id/txtPricesInp"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="75dp"
             android:ems="10"
             android:fontFamily="@font/raleway"
-            android:hint="10.00"
+            android:hint="@string/enter_product_price"
+            android:importantForAutofill="no"
             android:inputType="numberDecimal"
+            android:minHeight="48dp"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            android:textColor="#000000"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/txtPrices"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="314dp"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/due_date"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPricesInp" />
+
+        <EditText
+            android:id="@+id/txtDateInp"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginEnd="136dp"
+            android:ems="10"
+            android:fontFamily="@font/raleway"
+            android:hint="@string/mmddyyyy"
+            android:importantForAutofill="no"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAdd"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/btn_orange_bg"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/add"
+            android:textColor="#FDF8F8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnSub"
+            app:layout_constraintStart_toEndOf="@+id/txtPricesInp"
+            app:layout_constraintTop_toBottomOf="@+id/txtProdName"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSub"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginEnd="39dp"
+            android:background="@drawable/btn_orange_bg"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/sub"
+            android:textColor="#FDF8F8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnAdd"
+            app:layout_constraintTop_toBottomOf="@+id/txtProdInfo"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSaveProd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/btn_orange_bg"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/save"
+            android:textColor="#FDF8F8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnCancelProd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDateInp"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancelProd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="90dp"
+            android:background="@drawable/btn_orange_bg"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/cancel"
+            android:textColor="#FDF8F8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnSaveProd"
+            app:layout_constraintTop_toBottomOf="@+id/txtDateInp"
+            tools:ignore="TextContrastCheck" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

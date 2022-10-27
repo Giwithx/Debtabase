@@ -32,4 +32,12 @@
     <string name="first_name">First Name</string>
     <string name="product_name">Product Name</string>
     <string name="last_name">Last Name</string>
+    <string name="enter_first_name">Enter first name</string>
+    <string name="enter_surname">Enter surname</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="product_information">Product Information</string>
+    <string name="mmddyyyy">MMDDYYYY</string>
+    <string name="enter_product_price">Enter product price</string>
+    <string name="enter_product_name">Enter product name</string>
+    <string name="prodimg">prodimg</string>
 </resources>
