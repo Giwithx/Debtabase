@@ -225,6 +225,7 @@
             android:fontFamily="@font/raleway"
             android:inputType="date"
             android:minHeight="48dp"
+            android:hint="MMDDYYYY"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="14sp"
