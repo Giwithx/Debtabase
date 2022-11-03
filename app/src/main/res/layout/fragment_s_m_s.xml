@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".SMSFragment">
 
@@ -7,7 +8,106 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/smsConstraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bgforsms">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/btn_orange_bg"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/save"
+            android:textColor="#FDF8F8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnCancelSend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancelSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="90dp"
+            android:background="@drawable/btn_orange_bg"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/cancel"
+            android:textColor="#FDF8F8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnSend"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/txtSMS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="74dp"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/send_sms_notification"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgSMS"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgSMS"
+            android:layout_width="51dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="48dp"
+            android:contentDescription="@string/smsimg"
+            android:src="@drawable/reg"
+            app:layout_constraintEnd_toStartOf="@+id/txtSMS"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/sms2" />
+
+        <TextView
+            android:id="@+id/txtCustName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="249dp"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/customer_name"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgSMS" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="250dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="86dp"
+            android:hint="@string/name1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCustName">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                tools:ignore="TextContrastCheck"
+                tools:text="Choose Customer Name" />
+        </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

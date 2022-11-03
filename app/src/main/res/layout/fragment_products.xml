@@ -8,13 +8,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/productConstraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bgforprod">
 
         <TextView
             android:id="@+id/txtProdInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="60dp"
             android:fontFamily="@font/bebas_neue"
             android:text="@string/product_information"
@@ -22,6 +23,7 @@
             android:textColor="#000000"
             android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgprod"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -29,7 +31,7 @@
             android:layout_width="51dp"
             android:layout_height="46dp"
             android:layout_marginStart="64dp"
-            android:layout_marginTop="98dp"
+            android:layout_marginTop="48dp"
             android:contentDescription="@string/prodimg"
             app:layout_constraintEnd_toStartOf="@+id/txtProdInfo"
             app:layout_constraintStart_toStartOf="parent"

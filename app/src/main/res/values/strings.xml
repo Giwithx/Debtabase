@@ -49,4 +49,8 @@
     <string name="debtabase_is_a_mobile_application_that_helps_business_owners_monitor_their_customer_s_debt">Debtabase is a mobile application that helps business owners monitor their customer\'s debt</string>
     <string name="with_debtabase_monitoring_of_debts_is_now_easy_no_need_to_use_pen_and_paper_to_list_the_debts_just_use_debtabase_and_you_will_be_at_ease">With debtabase, monitoring of debts is now easy. No need to use pen and paper to list the debts, just use debtabase and you will be at ease.</string>
     <string name="todo">TODO</string>
+    <string name="name1">Name</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="smsimg">smsimg</string>
+    <string name="send_sms_notification">Send SMS Notification</string>
 </resources>

@@ -46,6 +46,7 @@
             android:layout_marginStart="170dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="188dp"
+            android:fontFamily="@font/raleway"
             android:text="@string/about"
             android:textSize="20sp"
             android:textStyle="bold|italic"
@@ -55,13 +56,14 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="366dp"
-            android:layout_height="97dp"
+            android:layout_width="364dp"
+            android:layout_height="71dp"
             android:layout_marginStart="22dp"
             android:layout_marginTop="36dp"
             android:layout_marginEnd="23dp"
+            android:fontFamily="@font/raleway"
             android:text="@string/debtabase_is_a_mobile_application_that_helps_business_owners_monitor_their_customer_s_debt"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -73,8 +75,9 @@
             android:layout_marginStart="22dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="22dp"
+            android:fontFamily="@font/raleway"
             android:text="@string/with_debtabase_monitoring_of_debts_is_now_easy_no_need_to_use_pen_and_paper_to_list_the_debts_just_use_debtabase_and_you_will_be_at_ease"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
