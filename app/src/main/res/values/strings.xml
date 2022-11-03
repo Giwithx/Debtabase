@@ -40,4 +40,8 @@
     <string name="enter_product_price">Enter product price</string>
     <string name="enter_product_name">Enter product name</string>
     <string name="prodimg">prodimg</string>
+    <string name="purchase">Purchase</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="customer_debt">Customer Debt</string>
+    <string name="registration_button">Customer Registration</string>
 </resources>

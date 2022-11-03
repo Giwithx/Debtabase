@@ -3,50 +3,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/homeFragment">
-
+    app:startDestination="@id/welcomeFragment2">
+    <fragment
+        android:id="@+id/welcomeFragment2"
+        android:name="com.example.debtabase.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment2_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.debtabase.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
+            android:id="@+id/action_homeFragment_to_customerDebtFragment"
+            app:destination="@id/customerDebtFragment" />
+        <action
             android:id="@+id/action_homeFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_customerListFragment"
-            app:destination="@id/customerListFragment" />
+            android:id="@+id/action_homeFragment_to_productsFragment2"
+            app:destination="@id/productsFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_SMSFragment"
+            app:destination="@id/SMSFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.debtabase.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
-    <fragment
-        android:id="@+id/customerListFragment"
-        android:name="com.example.debtabase.CustomerListFragment"
-        android:label="fragment_customer_list"
-        tools:layout="@layout/fragment_customer_list" >
+        tools:layout="@layout/fragment_register" >
         <action
-            android:id="@+id/action_customerListFragment_to_customerInfoFragment"
-            app:destination="@id/customerInfoFragment" />
-        <action
-            android:id="@+id/action_customerListFragment_to_customerDebtFragment"
-            app:destination="@id/customerDebtFragment" />
+            android:id="@+id/action_registerFragment_to_welcomeFragment2"
+            app:destination="@id/welcomeFragment2" />
     </fragment>
     <fragment
-        android:id="@+id/customerInfoFragment"
-        android:name="com.example.debtabase.CustomerInfoFragment"
-        android:label="fragment_customer_info"
-        tools:layout="@layout/fragment_customer_info" />
+        android:id="@+id/aboutFragment2"
+        android:name="com.example.debtabase.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/customerDebtFragment"
         android:name="com.example.debtabase.CustomerDebtFragment"
         android:label="fragment_customer_debt"
         tools:layout="@layout/fragment_customer_debt" />
     <fragment
-        android:id="@+id/aboutFragment"
-        android:name="com.example.debtabase.AboutFragment"
-        android:label="fragment_about"
-        tools:layout="@layout/fragment_about" />
+        android:id="@+id/productsFragment2"
+        android:name="com.example.debtabase.ProductsFragment"
+        android:label="fragment_products"
+        tools:layout="@layout/fragment_products" />
+    <fragment
+        android:id="@+id/SMSFragment"
+        android:name="com.example.debtabase.SMSFragment"
+        android:label="fragment_s_m_s"
+        tools:layout="@layout/fragment_s_m_s" />
 </navigation>
