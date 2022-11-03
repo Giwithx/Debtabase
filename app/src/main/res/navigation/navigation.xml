@@ -52,7 +52,11 @@
         android:id="@+id/customerDebtFragment"
         android:name="com.example.debtabase.CustomerDebtFragment"
         android:label="fragment_customer_debt"
-        tools:layout="@layout/fragment_customer_debt" />
+        tools:layout="@layout/fragment_customer_debt" >
+        <action
+            android:id="@+id/action_customerDebtFragment_to_customerListFragment"
+            app:destination="@id/customerListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/productsFragment2"
         android:name="com.example.debtabase.ProductsFragment"
@@ -63,4 +67,18 @@
         android:name="com.example.debtabase.SMSFragment"
         android:label="fragment_s_m_s"
         tools:layout="@layout/fragment_s_m_s" />
+    <fragment
+        android:id="@+id/customerListFragment"
+        android:name="com.example.debtabase.CustomerListFragment"
+        android:label="fragment_customer_list"
+        tools:layout="@layout/fragment_customer_list" >
+        <action
+            android:id="@+id/action_customerListFragment_to_customerInfoFragment"
+            app:destination="@id/customerInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerInfoFragment"
+        android:name="com.example.debtabase.CustomerInfoFragment"
+        android:label="fragment_customer_info"
+        tools:layout="@layout/fragment_customer_info" />
 </navigation>
