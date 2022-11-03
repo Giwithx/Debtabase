@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import com.example.debtabase.databinding.FragmentHomeBinding
+import com.example.debtabase.databinding.FragmentProductsBinding
 
 
 class ProductsFragment : Fragment() {
@@ -14,7 +18,13 @@ class ProductsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_products, container, false)
+        val binding = DataBindingUtil.inflate<FragmentProductsBinding>(
+            inflater, R.layout.fragment_products, container, false
+        )
+        binding.btnCancelProd.setOnClickListener{ view: View ->
+            view.findNavController().navigate(R.id.action_productsFragment2_to_homeFragment)
+        }
+        return binding.root
     }
 
 }

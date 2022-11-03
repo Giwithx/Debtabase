@@ -137,13 +137,13 @@
             android:text="@string/save"
             android:textColor="#FDF8F8"
             android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/btnCancelProd"
+            app:layout_constraintEnd_toStartOf="@+id/btnCancelReg"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtPhoneNum"
             tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnCancelProd"
+            android:id="@+id/btnCancelReg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="41dp"
