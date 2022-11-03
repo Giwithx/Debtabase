@@ -42,6 +42,9 @@
         <action
             android:id="@+id/action_registerFragment_to_welcomeFragment2"
             app:destination="@id/welcomeFragment2" />
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment2"
@@ -61,7 +64,11 @@
         android:id="@+id/productsFragment2"
         android:name="com.example.debtabase.ProductsFragment"
         android:label="fragment_products"
-        tools:layout="@layout/fragment_products" />
+        tools:layout="@layout/fragment_products" >
+        <action
+            android:id="@+id/action_productsFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/SMSFragment"
         android:name="com.example.debtabase.SMSFragment"
