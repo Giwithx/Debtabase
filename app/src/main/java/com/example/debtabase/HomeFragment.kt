@@ -21,11 +21,17 @@ class HomeFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentHomeBinding>(
             inflater, R.layout.fragment_home, container, false
         )
-        binding.btnCustomerDB.setOnClickListener{ view: View ->
-            view.findNavController().navigate(R.id.action_homeFragment_to_customerListFragment)
+        binding.Btnpurchase.setOnClickListener{ view: View ->
+            view.findNavController().navigate(R.id.action_homeFragment_to_productsFragment2)
         }
-        binding.btnCustomerReg.setOnClickListener{ view: View ->
+        binding.Btndebt.setOnClickListener{ view: View ->
+            view.findNavController().navigate(R.id.action_homeFragment_to_customerDebtFragment)
+        }
+        binding.Btnreg.setOnClickListener{ view: View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_registerFragment)
+        }
+        binding.Btnsms.setOnClickListener{ view: View->
+            view.findNavController().navigate(R.id.action_homeFragment_to_SMSFragment)
         }
         return binding.root
     }
