@@ -10,14 +10,74 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="198dp"
+            android:layout_height="127dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="118dp"
+            android:src="@drawable/er"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo" />
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="169dp"
-            android:layout_marginTop="324dp"
-            android:text="@string/about"
+            android:layout_marginStart="167dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="167dp"
+            android:fontFamily="@font/raleway"
+            android:text="@string/debtt"
+            android:textColor="#3F51B5"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="188dp"
+            android:text="@string/about"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="366dp"
+            android:layout_height="97dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="23dp"
+            android:text="@string/debtabase_is_a_mobile_application_that_helps_business_owners_monitor_their_customer_s_debt"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="367dp"
+            android:layout_height="148dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="22dp"
+            android:text="@string/with_debtabase_monitoring_of_debts_is_now_easy_no_need_to_use_pen_and_paper_to_list_the_debts_just_use_debtabase_and_you_will_be_at_ease"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
