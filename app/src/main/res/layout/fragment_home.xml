@@ -16,7 +16,7 @@
             android:layout_height="100dip"
             android:layout_marginStart="100dp"
             android:layout_marginTop="300dp"
-            android:background="@drawable/shopping_bag"
+            android:background="@drawable/prod"
             android:contentDescription="@string/purchase"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -28,7 +28,7 @@
             android:layout_height="100dip"
             android:layout_marginStart="28dp"
             android:layout_marginTop="300dp"
-            android:background="@drawable/sms"
+            android:background="@drawable/sms2"
             android:contentDescription="@string/send_sms"
             app:layout_constraintStart_toEndOf="@+id/Btnpurchase"
             app:layout_constraintTop_toTopOf="parent" />

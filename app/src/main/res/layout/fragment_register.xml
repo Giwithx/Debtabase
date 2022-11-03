@@ -8,14 +8,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/registerConstraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bgforreg">
 
 
         <TextView
             android:id="@+id/txtCustReg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="60dp"
             android:fontFamily="@font/bebas_neue"
             android:text="@string/customer_registration1"
@@ -31,7 +32,7 @@
             android:layout_width="51dp"
             android:layout_height="46dp"
             android:layout_marginStart="42dp"
-            android:layout_marginTop="98dp"
+            android:layout_marginTop="48dp"
             android:contentDescription="@string/regimg"
             android:src="@drawable/reg"
             app:layout_constraintEnd_toStartOf="@+id/txtCustReg"
@@ -131,7 +132,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/btn_orange_bg"
             android:fontFamily="@font/bebas_neue"
             android:text="@string/save"
@@ -147,7 +148,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="41dp"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="90dp"
             android:background="@drawable/btn_orange_bg"
             android:fontFamily="@font/bebas_neue"
