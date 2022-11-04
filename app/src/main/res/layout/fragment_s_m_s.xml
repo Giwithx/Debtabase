@@ -18,7 +18,7 @@
             android:layout_marginTop="100dp"
             android:background="@drawable/btn_orange_bg"
             android:fontFamily="@font/bebas_neue"
-            android:text="@string/save"
+            android:text="@string/send"
             android:textColor="#FDF8F8"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/btnCancelSend"
@@ -47,8 +47,9 @@
             android:id="@+id/txtSMS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="100dp"
-            android:layout_marginEnd="74dp"
+            android:layout_marginEnd="66dp"
             android:fontFamily="@font/bebas_neue"
             android:text="@string/send_sms_notification"
             android:textAlignment="center"
@@ -58,25 +59,12 @@
             app:layout_constraintStart_toEndOf="@+id/imgSMS"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imgSMS"
-            android:layout_width="51dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="42dp"
-            android:layout_marginTop="98dp"
-            android:contentDescription="@string/smsimg"
-            android:src="@drawable/reg"
-            app:layout_constraintEnd_toStartOf="@+id/txtSMS"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/sms3" />
-
         <TextView
             android:id="@+id/txtCustName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="39dp"
             android:layout_marginEnd="249dp"
             android:fontFamily="@font/bebas_neue"
             android:text="@string/customer_name"
@@ -108,5 +96,17 @@
                 tools:ignore="TextContrastCheck"
                 tools:text="Choose Customer Name" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/imgSMS"
+            android:layout_width="36dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="100dp"
+            android:contentDescription="@string/imgsms"
+            android:src="@drawable/sms3"
+            app:layout_constraintEnd_toStartOf="@+id/txtSMS"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

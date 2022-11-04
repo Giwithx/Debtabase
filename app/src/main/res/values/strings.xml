@@ -65,4 +65,6 @@
     <string name="todos">TODO</string>
     <string name="todor">TODO</string>
     <string name="todoq">TODO</string>
+    <string name="send">Send</string>
+    <string name="imgsms">imgSMS</string>
 </resources>
