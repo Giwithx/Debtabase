@@ -53,4 +53,7 @@
     <string name="customer_name">Customer Name</string>
     <string name="smsimg">smsimg</string>
     <string name="send_sms_notification">Send SMS Notification</string>
+    <string name="todoe">TODO</string>
+    <string name="todoo">TODO</string>
+    <string name="todooo">TODO</string>
 </resources>
