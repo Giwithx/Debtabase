@@ -41,7 +41,7 @@ class RegisterFragment : Fragment() {
             if(firstIn.isNotEmpty() && lastIn.isNotEmpty() && contactIn.isEmpty()){
                 Toast.makeText(this@RegisterFragment.requireActivity(), "Please Input Contact Number", Toast.LENGTH_SHORT).show()
             }
-            if(firstIn.isEmpty() && lastIn.isEmpty() && contactIn.isEmpty()){
+            if(firstIn.isEmpty() || lastIn.isEmpty() || contactIn.isEmpty()){
                 Toast.makeText(this@RegisterFragment.requireActivity(), "Incorrect Credentials!", Toast.LENGTH_SHORT).show()
             }
 
