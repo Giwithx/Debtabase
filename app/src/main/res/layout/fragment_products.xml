@@ -10,14 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <TextView
             android:id="@+id/txtProdInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="44dp"
             android:layout_marginEnd="60dp"
             android:fontFamily="@font/bebas_neue"
-            android:text="@string/product_information"
+            android:text="Customer Debt Listing"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp"
@@ -30,29 +31,67 @@
             android:layout_width="51dp"
             android:layout_height="46dp"
             android:layout_marginStart="64dp"
-            android:layout_marginTop="98dp"
+            android:layout_marginTop="44dp"
             android:contentDescription="@string/prodimg"
             app:layout_constraintEnd_toStartOf="@+id/txtProdInfo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/prod" />
 
-
         <TextView
             android:id="@+id/txtProducts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="152dp"
             android:fontFamily="@font/bebas_neue"
             android:text="@string/products_goods_purchased"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+        <TextView
+            android:id="@+id/txtCustomerName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="152dp"
+            android:fontFamily="@font/bebas_neue"
+            android:text="Name of Customer"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtProdInfo" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="250dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="86dp"
+            android:hint="@string/name1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCustomerName2">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                tools:ignore="TextContrastCheck"
+                tools:text="Choose Customer Name" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <EditText
             android:id="@+id/txtProdName"
@@ -160,7 +199,7 @@
             android:layout_width="48dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="39dp"
             android:background="@drawable/btn_orange_bg"
             android:fontFamily="@font/bebas_neue"
@@ -169,7 +208,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnAdd"
-            app:layout_constraintTop_toBottomOf="@+id/txtProdInfo"
+            app:layout_constraintTop_toBottomOf="@+id/txtProdName"
             tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -177,7 +216,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="48dp"
             android:background="@drawable/btn_orange_bg"
             android:fontFamily="@font/bebas_neue"
             android:text="@string/save"
@@ -193,7 +232,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="41dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="48dp"
             android:layout_marginEnd="90dp"
             android:background="@drawable/btn_orange_bg"
             android:fontFamily="@font/bebas_neue"

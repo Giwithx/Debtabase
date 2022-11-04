@@ -67,4 +67,8 @@
     <string name="todoq">TODO</string>
     <string name="send">Send</string>
     <string name="imgsms">imgSMS</string>
+    <string name="juan_dela_cruz">Juan Dela Cruz</string>
+    <string name="debt_500">Debt: 500</string>
+    <string name="due_january_1_2023">Due: January 1, 2023</string>
+    <string name="buttonuser">buttonUser</string>
 </resources>

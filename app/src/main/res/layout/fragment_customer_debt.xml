@@ -4,24 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".CustomerDebtFragment">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/debtConstraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/btnUser"
+            android:layout_width="114dp"
+            android:layout_height="114dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="104dp"
+            android:background="@drawable/user"
+            android:contentDescription="@string/buttonuser"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/abc"
-                android:contentDescription="@string/todoq" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/txtDebt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="156dp"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/debt_500"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/btnUser"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtCustomerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="112dp"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/juan_dela_cruz"
+            android:textSize="34sp"
+            app:layout_constraintStart_toEndOf="@+id/btnUser"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtDue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="108dp"
+            android:fontFamily="@font/bebas_neue"
+            android:text="@string/due_january_1_2023"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/btnUser"
+            app:layout_constraintTop_toBottomOf="@+id/txtDebt" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

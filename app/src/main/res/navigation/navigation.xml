@@ -57,8 +57,8 @@
         android:label="fragment_customer_debt"
         tools:layout="@layout/fragment_customer_debt" >
         <action
-            android:id="@+id/action_customerDebtFragment_to_customerListFragment"
-            app:destination="@id/customerListFragment" />
+            android:id="@+id/action_customerDebtFragment_to_customerInfoFragment"
+            app:destination="@id/customerInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/productsFragment2"
@@ -77,15 +77,6 @@
         <action
             android:id="@+id/action_SMSFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/customerListFragment"
-        android:name="com.example.debtabase.CustomerListFragment"
-        android:label="fragment_customer_list"
-        tools:layout="@layout/fragment_customer_list" >
-        <action
-            android:id="@+id/action_customerListFragment_to_customerInfoFragment"
-            app:destination="@id/customerInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/customerInfoFragment"

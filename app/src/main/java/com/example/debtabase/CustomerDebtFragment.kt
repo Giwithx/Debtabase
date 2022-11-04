@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import com.example.debtabase.databinding.FragmentCustomerDebtBinding
 
 
 class CustomerDebtFragment : Fragment() {
@@ -17,7 +20,13 @@ class CustomerDebtFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         (activity as AppCompatActivity).supportActionBar?.title = "Customer Debt"
-        return inflater.inflate(R.layout.fragment_customer_debt, container, false)
+        val binding = DataBindingUtil.inflate<FragmentCustomerDebtBinding>(
+            inflater, R.layout.fragment_customer_debt, container, false
+        )
+        binding.btnUser.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_customerDebtFragment_to_customerInfoFragment)
+        }
+        return binding.root
     }
 
 
