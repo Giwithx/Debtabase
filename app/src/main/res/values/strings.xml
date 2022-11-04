@@ -56,4 +56,10 @@
     <string name="todoe">TODO</string>
     <string name="todoo">TODO</string>
     <string name="todooo">TODO</string>
+    <string name="imgprod">imgProd</string>
+    <string name="imgpeso">imgPeso</string>
+    <string name="imgdate">imgDate</string>
+    <string name="home">Home</string>
+    <string name="imgname">imgName</string>
+    <string name="imgphone">imgPhone</string>
 </resources>
