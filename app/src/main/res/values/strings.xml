@@ -62,4 +62,7 @@
     <string name="home">Home</string>
     <string name="imgname">imgName</string>
     <string name="imgphone">imgPhone</string>
+    <string name="todos">TODO</string>
+    <string name="todor">TODO</string>
+    <string name="todoq">TODO</string>
 </resources>
