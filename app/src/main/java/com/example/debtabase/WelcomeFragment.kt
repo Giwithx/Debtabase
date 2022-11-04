@@ -2,6 +2,7 @@ package com.example.debtabase
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -18,6 +19,7 @@ class WelcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        (activity as AppCompatActivity).supportActionBar?.title = "Debtabase"
         val binding = DataBindingUtil.inflate<FragmentWelcomeBinding>(
             inflater, R.layout.fragment_welcome, container, false
         )
