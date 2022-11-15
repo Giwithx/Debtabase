@@ -43,7 +43,7 @@ class Register : AppCompatActivity() {
     }
     private fun saveCustomerData(){
         val cusFN = txtFName.text.toString()
-        val cusLN = txtFName.text.toString()
+        val cusLN = txtLName.text.toString()
         val cusPN = txtPhone.text.toString()
 
         if(cusFN.isEmpty()){
