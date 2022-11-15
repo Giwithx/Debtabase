@@ -27,7 +27,7 @@ class WelcomeFragment : Fragment() {
             view.findNavController().navigate(R.id.action_welcomeFragment2_to_homeFragment)
         }
         binding.btnCustomerReg.setOnClickListener{ view: View ->
-            view.findNavController().navigate(R.id.action_welcomeFragment2_to_registerFragment)
+            view.findNavController().navigate(R.id.action_welcomeFragment2_to_register)
         }
         setHasOptionsMenu(true)
         return binding.root

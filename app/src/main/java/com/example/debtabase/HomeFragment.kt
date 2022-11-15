@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
             view.findNavController().navigate(R.id.action_homeFragment_to_customerDebtFragment)
         }
         binding.Btnreg.setOnClickListener{ view: View ->
-            view.findNavController().navigate(R.id.action_homeFragment_to_registerFragment)
+            view.findNavController().navigate(R.id.action_homeFragment_to_register)
         }
         binding.Btnsms.setOnClickListener{ view: View->
             view.findNavController().navigate(R.id.action_homeFragment_to_SMSFragment)

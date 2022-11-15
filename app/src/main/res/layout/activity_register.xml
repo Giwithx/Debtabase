@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.debtabase.RegisterFragment">
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/registerConstraint"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register">
 
         <TextView
             android:id="@+id/txtCustReg"
@@ -126,36 +121,18 @@
             app:layout_constraintStart_toEndOf="@+id/imageView8"
             app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSave"
+        <Button
+            android:id="@+id/btnFirebaseReg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="64dp"
             android:background="@drawable/btn_orange_bg"
             android:fontFamily="@font/bebas_neue"
-            android:text="@string/save"
+            android:text="Register"
             android:textColor="#FDF8F8"
             android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/btnCancelReg"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPhoneNum"
-            tools:ignore="TextContrastCheck" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnCancelReg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="41dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginEnd="90dp"
-            android:background="@drawable/btn_orange_bg"
-            android:fontFamily="@font/bebas_neue"
-            android:text="@string/cancel"
-            android:textColor="#FDF8F8"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnSave"
             app:layout_constraintTop_toBottomOf="@+id/txtPhoneNum"
             tools:ignore="TextContrastCheck" />
 
@@ -184,5 +161,4 @@
             app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>
