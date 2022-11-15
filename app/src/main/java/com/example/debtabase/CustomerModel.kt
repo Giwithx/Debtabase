@@ -6,6 +6,6 @@ import com.google.firebase.database.IgnoreExtraProperties
 data class CustomerModel (
     var cusId: String? = null,
     var cusFN: String? = null,
-    var cusN: String? = null,
+    var cusLN: String? = null,
     var custPN: String? = null
 )
