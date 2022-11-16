@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val actionbar = supportActionBar
+        actionbar!!.title = "Debtabase"
+
 
     }
 
