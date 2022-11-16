@@ -71,4 +71,12 @@
     <string name="debt_500">Debt: 500</string>
     <string name="due_january_1_2023">Due: January 1, 2023</string>
     <string name="buttonuser">buttonUser</string>
+    <string name="go_to_home">Go to home</string>
+    <string name="rtodoo">TODO</string>
+    <string name="todoee">TODO</string>
+    <string name="todov">TODO</string>
+    <string name="todoqq">TODO</string>
+    <string name="todoa">TODO</string>
+    <string name="todovc">TODO</string>
+    <string name="todol">TODO</string>
 </resources>
