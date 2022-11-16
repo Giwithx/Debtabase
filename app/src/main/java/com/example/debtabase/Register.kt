@@ -52,7 +52,7 @@ class Register : AppCompatActivity() {
         if(cusLN.isEmpty()){
             txtLName.error = "Please enter last name"
         }
-        if(cusPN.isEmpty()){
+        if(cusPN.isEmpty() || cusPN.length != 11){
             txtPhone.error = "Please enter phone number."
         }
 
@@ -60,7 +60,7 @@ class Register : AppCompatActivity() {
 
         val customerreg = CustomerModel(cusId, cusFN, cusLN, cusPN)
 
-        if(cusFN.isNotEmpty() && cusLN.isNotEmpty() && cusPN.isNotEmpty()){
+        if(cusFN.isNotEmpty() && cusLN.isNotEmpty() && cusPN.isNotEmpty() && cusPN.length == 11){
             dbRef.child(cusId).setValue(customerreg)
                 .addOnCompleteListener{
                     Toast.makeText(this, "Registered Successfully.", Toast.LENGTH_LONG).show()
