@@ -15,13 +15,13 @@
             android:layout_width="198dp"
             android:layout_height="127dp"
             android:layout_marginStart="95dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="75dp"
             android:layout_marginEnd="118dp"
+            android:contentDescription="@string/todo"
             android:src="@drawable/er"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/todo" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView3"

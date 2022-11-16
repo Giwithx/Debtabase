@@ -10,23 +10,32 @@
         android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="85dp"
+        android:background="@drawable/btn_orange_bg"
+        android:fontFamily="@font/bebas_neue"
         android:text="Update"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/btnDelete"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="75dp"
+        android:background="@drawable/btn_orange_bg"
+        android:fontFamily="@font/bebas_neue"
         android:text="Delete"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnUpdate"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -60,10 +69,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/bebas_neue"
                     android:gravity="center"
                     android:text="Customer ID"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -109,10 +119,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/bebas_neue"
                     android:gravity="center"
                     android:text="First Name"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -159,13 +170,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/bebas_neue"
                     android:gravity="center"
                     android:text="Last Name"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
 
 
-                    />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -214,13 +225,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
 
+                    android:fontFamily="@font/bebas_neue"
                     android:gravity="center"
                     android:text="Phone Number"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
 
 
-                    />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 

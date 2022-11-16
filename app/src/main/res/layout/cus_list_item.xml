@@ -25,12 +25,13 @@
                 android:id="@+id/tvCusName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Customer Name"
                 android:layout_gravity="center"
+                android:fontFamily="@font/raleway"
                 android:gravity="center"
+                android:text="Customer Name"
                 android:textColor="@color/black"
                 android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
 
         </LinearLayout>
