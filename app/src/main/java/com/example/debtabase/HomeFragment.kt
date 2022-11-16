@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
             view.findNavController().navigate(R.id.action_homeFragment_to_productsFragment2)
         }
         binding.Btndebt.setOnClickListener{ view: View ->
-            view.findNavController().navigate(R.id.action_homeFragment_to_customerDebtFragment)
+            view.findNavController().navigate(R.id.action_homeFragment_to_fetchingActivity)
         }
         binding.Btnreg.setOnClickListener{ view: View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_register)

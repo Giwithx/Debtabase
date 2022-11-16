@@ -13,8 +13,6 @@ import com.google.firebase.ktx.Firebase
 
 
 class Register : AppCompatActivity() {
-    private lateinit var drawerLayout: DrawerLayout
-
     private lateinit var txtFName: EditText
     private lateinit var txtLName: EditText
     private lateinit var txtPhone: EditText

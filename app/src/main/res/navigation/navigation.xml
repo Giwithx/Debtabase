@@ -22,9 +22,6 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_customerDebtFragment"
-            app:destination="@id/customerDebtFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_productsFragment2"
             app:destination="@id/productsFragment2" />
         <action
@@ -33,21 +30,15 @@
         <action
             android:id="@+id/action_homeFragment_to_register"
             app:destination="@id/register" />
+        <action
+            android:id="@+id/action_homeFragment_to_fetchingActivity"
+            app:destination="@id/fetchingActivity" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment2"
         android:name="com.example.debtabase.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
-    <fragment
-        android:id="@+id/customerDebtFragment"
-        android:name="com.example.debtabase.CustomerDebtFragment"
-        android:label="fragment_customer_debt"
-        tools:layout="@layout/fragment_customer_debt" >
-        <action
-            android:id="@+id/action_customerDebtFragment_to_customerInfoFragment"
-            app:destination="@id/customerInfoFragment" />
-    </fragment>
     <fragment
         android:id="@+id/productsFragment2"
         android:name="com.example.debtabase.ProductsFragment"
@@ -66,14 +57,19 @@
             android:id="@+id/action_SMSFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/customerInfoFragment"
-        android:name="com.example.debtabase.CustomerInfoFragment"
-        android:label="fragment_customer_info"
-        tools:layout="@layout/fragment_customer_info" />
     <activity
         android:id="@+id/register"
         android:name="com.example.debtabase.Register"
         android:label="fragment_register"
         tools:layout="@layout/activity_register" />
+    <activity
+        android:id="@+id/fetchingActivity"
+        android:name="com.example.debtabase.FetchingActivity"
+        android:label="activity_fetching"
+        tools:layout="@layout/activity_fetching" />
+    <activity
+        android:id="@+id/customerDetailsActivity"
+        android:name="com.example.debtabase.CustomerDetailsActivity"
+        android:label="activity_customer_details"
+        tools:layout="@layout/activity_customer_details" />
 </navigation>
