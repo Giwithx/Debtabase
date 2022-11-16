@@ -60,15 +60,17 @@ class Register : AppCompatActivity() {
 
         val customerreg = CustomerModel(cusId, cusFN, cusLN, cusPN)
 
-        dbRef.child(cusId).setValue(customerreg)
-            .addOnCompleteListener{
-                Toast.makeText(this, "Registered Successfully.", Toast.LENGTH_LONG).show()
+        if(cusFN.isNotEmpty() && cusLN.isNotEmpty() && cusPN.isNotEmpty()){
+            dbRef.child(cusId).setValue(customerreg)
+                .addOnCompleteListener{
+                    Toast.makeText(this, "Registered Successfully.", Toast.LENGTH_LONG).show()
 
-                txtFName.text.clear()
-                txtLName.text.clear()
-                txtPhone.text.clear()
-        }.addOnFailureListener { err ->
-            Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                    txtFName.text.clear()
+                    txtLName.text.clear()
+                    txtPhone.text.clear()
+                }.addOnFailureListener { err ->
+                    Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                }
         }
 
     }
