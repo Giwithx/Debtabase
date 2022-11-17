@@ -79,4 +79,7 @@
     <string name="todoa">TODO</string>
     <string name="todovc">TODO</string>
     <string name="todol">TODO</string>
+    <string name="register">Register</string>
+    <string name="registration">Registration</string>
+    <string name="customer">Customer</string>
 </resources>
