@@ -10,10 +10,26 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="left"
+        android:layout_gravity="left"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="118dp"
+            android:src="@drawable/user" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
         android:padding="16dp"
-        android:layout_gravity="center"
+        android:layout_gravity="right"
         android:orientation="vertical">
+
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -22,18 +38,72 @@
             android:orientation="horizontal">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: "
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/bebas_neue"/>
+
+            <TextView
                 android:id="@+id/tvCusName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:fontFamily="@font/raleway"
-                android:gravity="center"
                 android:text="Customer Name"
                 android:textColor="@color/black"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textSize="20sp" />
 
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Debt: "
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/bebas_neue"/>
+
+            <TextView
+                android:id="@+id/tvCusDebt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway"
+                android:text="Customer Debt"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Due Date: "
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/bebas_neue"/>
+
+            <TextView
+                android:id="@+id/tvCusDDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway"
+                android:text="Customer Due Date"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
         </LinearLayout>
 
     </LinearLayout>

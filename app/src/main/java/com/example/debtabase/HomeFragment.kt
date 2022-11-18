@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
             inflater, R.layout.fragment_home, container, false
         )
         binding.Btnpurchase.setOnClickListener{ view: View ->
-            view.findNavController().navigate(R.id.action_homeFragment_to_productsFragment2)
+            view.findNavController().navigate(R.id.action_homeFragment_to_debtActivity)
         }
         binding.Btndebt.setOnClickListener{ view: View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_fetchingActivity)

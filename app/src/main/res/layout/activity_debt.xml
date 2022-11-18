@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.debtabase.ProductsFragment">
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/productConstraint"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DebtActivity">
 
         <TextView
             android:id="@+id/txtProdInfo"
@@ -84,29 +79,42 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtProdInfo" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <Spinner
             android:id="@+id/textInputLayout2"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="250dp"
             android:layout_height="55dp"
             android:layout_marginStart="75dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="86dp"
-            android:hint="@string/name1"
-            app:boxStrokeColor="#00BCD4"
+            android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtCustomerName2">
+            app:layout_constraintTop_toBottomOf="@id/txtCustomerName2"/>
 
-            <AutoCompleteTextView
-                android:id="@+id/autoCompleteTextView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:inputType="none"
-                tools:ignore="TextContrastCheck"
-                tools:text="Choose Customer Name" />
-        </com.google.android.material.textfield.TextInputLayout>
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/textInputLayout2"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:layout_marginStart="75dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_marginEnd="86dp"-->
+<!--            android:hint="@string/name1"-->
+<!--            app:boxStrokeColor="#00BCD4"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/txtCustomerName2">-->
+
+<!--            <AutoCompleteTextView-->
+<!--                android:id="@+id/autoCompleteTextView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:inputType="none"-->
+<!--                tools:ignore="TextContrastCheck"-->
+<!--                tools:text="Choose Customer Name" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
 
         <EditText
             android:id="@+id/txtProdName"
@@ -193,69 +201,33 @@
             app:layout_constraintStart_toEndOf="@+id/imgDate"
             app:layout_constraintTop_toBottomOf="@+id/txtDate" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/btnAdd"
             android:layout_width="48dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="121dp"
+            android:layout_marginStart="172dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="30dp"
             android:background="@drawable/btn_orange_bg"
             android:fontFamily="@font/bebas_neue"
             android:text="@string/add"
             android:textColor="#FDF8F8"
             android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/btnSub"
             app:layout_constraintStart_toEndOf="@+id/txtDate"
             app:layout_constraintTop_toBottomOf="@+id/txtPricesInp"
             tools:ignore="TextContrastCheck" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSub"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="106dp"
-            android:layout_marginEnd="38dp"
-            android:background="@drawable/btn_orange_bg"
-            android:fontFamily="@font/bebas_neue"
-            android:text="@string/sub"
-            android:textColor="#FDF8F8"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnAdd"
-            app:layout_constraintTop_toBottomOf="@+id/txtProdName"
-            tools:ignore="TextContrastCheck" />
-
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/btnSaveProd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="36dp"
             android:background="@drawable/btn_orange_bg"
             android:fontFamily="@font/bebas_neue"
             android:text="@string/save"
             android:textColor="#FDF8F8"
             android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/btnCancelProd"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDateInp"
-            tools:ignore="TextContrastCheck" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnCancelProd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="41dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="90dp"
-            android:background="@drawable/btn_orange_bg"
-            android:fontFamily="@font/bebas_neue"
-            android:text="@string/cancel"
-            android:textColor="#FDF8F8"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnSaveProd"
             app:layout_constraintTop_toBottomOf="@+id/txtDateInp"
             tools:ignore="TextContrastCheck" />
 
@@ -298,5 +270,4 @@
             app:layout_constraintTop_toBottomOf="@+id/txtDate" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>
