@@ -61,12 +61,11 @@ class DebtActivity : AppCompatActivity() {
     }
     private fun saveDebtData(){
         val DebtFN = DebtContainer
-        val DebtProd = DebtProduct.text.toString()
         val DebtPrice = DebtProdPrice.text.toString()
         val DebtDate = DebtDueDate.text.toString()
-        val DebtId = dbRefDebt.push().key!!
+        val DebtProdList = DebtProduct.text.toString()
 
-        if(DebtProd.isEmpty()){
+        if(DebtProdList.isEmpty()){
             DebtProduct.error = "Please enter product."
         }
         if(DebtPrice.isEmpty()){
@@ -76,22 +75,50 @@ class DebtActivity : AppCompatActivity() {
             DebtDueDate.error = "Please enter due date."
         }
 
-        val debtlist = CustomerDebtModel(DebtId, DebtFN, DebtProd, DebtPrice, DebtDate)
+        val debtlist = CustomerDebtModel(DebtFN, DebtPrice, DebtDate)
+        val debtprod = CustomerProdModel(DebtProdList)
 
-        if(DebtProd.isNotEmpty() && DebtPrice.isNotEmpty() && DebtDate.isNotEmpty()){
-            dbRefDebt.child(DebtId).setValue(debtlist).addOnCompleteListener {
+        if(DebtPrice.isNotEmpty() && DebtDate.isNotEmpty()){
+            dbRefDebt.child(DebtFN).child(DebtDate).setValue(debtlist).addOnCompleteListener {
                 Toast.makeText(this, "Data Successfully added.", Toast.LENGTH_LONG).show()
-
-                DebtProduct.text.clear()
                 DebtProdPrice.text.clear()
                 DebtDueDate.text.clear()
+                if(DebtProdList.isNotEmpty()){
+                    dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
+                        DebtProduct.text.clear()
+                    }.addOnFailureListener { err2 ->
+                        Toast.makeText(this, "Error ${err2.message}", Toast.LENGTH_LONG).show()
+                    }
+                }
             }.addOnFailureListener { err ->
                 Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
             }
         }
+
     }
     private fun addDebtData(){
-
+        val DebtFN = DebtContainer
+        val DebtPrice = DebtProdPrice.text.toString()
+        val DebtProdList = DebtProduct.text.toString()
+        val DebtDate = DebtDueDate.text.toString()
+        if(DebtProdList.isEmpty()){
+            DebtProduct.error = "Please enter product."
+        }
+        if(DebtPrice.isEmpty()){
+            DebtProdPrice.error = "Please enter product price"
+        }
+        if(DebtDate.isEmpty()){
+            DebtDueDate.error = "Please enter due date."
+        }
+        val debtprod = CustomerProdModel(DebtProdList)
+        if(DebtProdList.isNotEmpty() && DebtPrice.isNotEmpty()){
+            dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
+                DebtProduct.text.clear()
+                DebtProdPrice.text.clear()
+            }.addOnFailureListener { err3 ->
+                Toast.makeText(this, "Error ${err3.message}", Toast.LENGTH_LONG).show()
+            }
+        }
     }
     private fun ShowData() {
         dbRefReg!!.addValueEventListener(object : ValueEventListener {
