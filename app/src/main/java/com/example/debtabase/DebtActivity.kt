@@ -1,6 +1,7 @@
 package com.example.debtabase
 
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
@@ -17,6 +18,7 @@ class DebtActivity : AppCompatActivity() {
     private lateinit var btnSave: Button
     private lateinit var spinnerList: ArrayList<String>
     private lateinit var adapter: ArrayAdapter<String>
+    private lateinit var DebtContainer: String
 
 
     private lateinit var dbRefReg: DatabaseReference
@@ -40,6 +42,7 @@ class DebtActivity : AppCompatActivity() {
         btnAdd = findViewById(R.id.btnAdd)
         btnSave = findViewById(R.id.btnSaveProd)
 
+
         spinnerList = ArrayList()
         adapter = ArrayAdapter(this@DebtActivity, android.R.layout.simple_spinner_dropdown_item,
             spinnerList
@@ -57,7 +60,35 @@ class DebtActivity : AppCompatActivity() {
 
     }
     private fun saveDebtData(){
+        val DebtFN = DebtContainer
+        val DebtProd = DebtProduct.text.toString()
+        val DebtPrice = DebtProdPrice.text.toString()
+        val DebtDate = DebtDueDate.text.toString()
+        val DebtId = dbRefDebt.push().key!!
 
+        if(DebtProd.isEmpty()){
+            DebtProduct.error = "Please enter product."
+        }
+        if(DebtPrice.isEmpty()){
+            DebtProdPrice.error = "Please enter product price"
+        }
+        if(DebtDate.isEmpty()){
+            DebtDueDate.error = "Please enter due date."
+        }
+
+        val debtlist = CustomerDebtModel(DebtId, DebtFN, DebtProd, DebtPrice, DebtDate)
+
+        if(DebtProd.isNotEmpty() && DebtPrice.isNotEmpty() && DebtDate.isNotEmpty()){
+            dbRefDebt.child(DebtId).setValue(debtlist).addOnCompleteListener {
+                Toast.makeText(this, "Data Successfully added.", Toast.LENGTH_LONG).show()
+
+                DebtProduct.text.clear()
+                DebtProdPrice.text.clear()
+                DebtDueDate.text.clear()
+            }.addOnFailureListener { err ->
+                Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+            }
+        }
     }
     private fun addDebtData(){
 
@@ -67,12 +98,27 @@ class DebtActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (item in snapshot.children) {
                     spinnerList.add(item.child("cusFN").value.toString() +" "+ item.child("cusLN").value.toString())
+                    DebtSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                        override fun onItemSelected(
+                            parent: AdapterView<*>?,
+                            view: View,
+                            position: Int,
+                            id: Long
+                        ) {
+                            DebtContainer = DebtSpinner.selectedItem.toString()
+                        }
+
+                        override fun onNothingSelected(p0: AdapterView<*>?) {
+                            TODO("Not yet implemented")
+                        }
+                    }
                 }
                 adapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(error: DatabaseError) {}
         })
+
     }
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
