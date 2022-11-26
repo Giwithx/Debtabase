@@ -114,7 +114,7 @@ class DebtActivity : AppCompatActivity() {
                 if(!snapshot.hasChild(DebtDate)){
                     if(DebtPrice.isNotEmpty() && DebtDate.isNotEmpty()){
                         dbRefDebt.child(DebtFN).child(DebtDate).setValue(debtlist).addOnCompleteListener {
-                            //Toast.makeText(this, "Data Successfully added.", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@DebtActivity, "Data Successfully added.", Toast.LENGTH_LONG).show()
                             DebtProdPrice.text.clear()
                             if(DebtProdList.isNotEmpty() && DebtPrice.isNotEmpty()){
                                 dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
