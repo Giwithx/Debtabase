@@ -2,14 +2,12 @@ package com.example.debtabase
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 
 class DebtActivity : AppCompatActivity() {
@@ -92,33 +90,35 @@ class DebtActivity : AppCompatActivity() {
     }
     private fun addDebtData(){
         val DebtFN = DebtContainer
-        val DebtPrice = DebtProdPrice.text.toString()
+        var DebtPrice = DebtProdPrice.text.toString().toFloatOrNull()
         val DebtDate = DateContainer
         val DebtProdList = DebtProduct.text.toString()
         val Date = tvDate
-        val hashMap = HashMap<String, Any>()
-        hashMap["products"] = DebtProdList
         if(DebtProdList.isEmpty()){
             DebtProduct.error = "Please enter product."
         }
-        if(DebtPrice.isEmpty()){
+        if(DebtPrice==null){
             DebtProdPrice.error = "Please enter product price"
         }
         if (Date.text.isEmpty() || Date.text.equals("Date")){
             Toast.makeText(this@DebtActivity, "Please input Date", Toast.LENGTH_SHORT).show()
         }
         val debtlist = CustomerDebtModel(DebtDate,DebtPrice)
-        val debtprod = CustomerDebtListModel(DebtProdList)
+        val debtprod = CustomerDebtListModel(DebtProdList, DebtPrice)
         dbRefDebt.child(DebtFN).addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(!snapshot.hasChild(DebtDate)){
-                    if(DebtPrice.isNotEmpty() && DebtDate.isNotEmpty()){
+                    if(DebtPrice!=null && DebtDate.isNotEmpty()){
                         dbRefDebt.child(DebtFN).child(DebtDate).setValue(debtlist).addOnCompleteListener {
                             Toast.makeText(this@DebtActivity, "Data Successfully added.", Toast.LENGTH_LONG).show()
                             DebtProdPrice.text.clear()
-                            if(DebtProdList.isNotEmpty() && DebtPrice.isNotEmpty()){
+                            if(DebtPrice!=null && DebtDate.isNotEmpty()){
                                 dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
                                     DebtProduct.text.clear()
+                                    for(item in snapshot.children){
+                                        DebtPrice += item.child("debtBalance").getValue(Float::class.java)!!
+                                    }
+                                    dbRefDebt.child(DebtFN).child(DebtDate).child("debtBalance").setValue(DebtPrice)
                                 }.addOnFailureListener { err3 ->
                                     Toast.makeText(this@DebtActivity, "Error ${err3.message}", Toast.LENGTH_LONG).show()
                                 }
@@ -129,9 +129,14 @@ class DebtActivity : AppCompatActivity() {
                     }
                 }
                 if(snapshot.hasChild(DebtDate)){
-                    if(DebtProdList.isNotEmpty() && DebtPrice.isNotEmpty()){
+                    if(DebtPrice!=null && DebtDate.isNotEmpty()){
                         dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
                             DebtProduct.text.clear()
+                            DebtProdPrice.text.clear()
+                            for(item in snapshot.children){
+                                DebtPrice += item.child("debtBalance").getValue(Float::class.java)!!
+                            }
+                            dbRefDebt.child(DebtFN).child(DebtDate).child("debtBalance").setValue(DebtPrice)
                         }.addOnFailureListener { err3 ->
                             Toast.makeText(this@DebtActivity, "Error ${err3.message}", Toast.LENGTH_LONG).show()
                         }
