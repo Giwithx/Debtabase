@@ -120,11 +120,11 @@ class DebtActivity : AppCompatActivity() {
                                 dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
                                     DebtProduct.text.clear()
                                 }.addOnFailureListener { err3 ->
-                                    //Toast.makeText(this, "Error ${err3.message}", Toast.LENGTH_LONG).show()
+                                    Toast.makeText(this@DebtActivity, "Error ${err3.message}", Toast.LENGTH_LONG).show()
                                 }
                             }
                         }.addOnFailureListener { err ->
-                            //Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@DebtActivity, "Error ${err.message}", Toast.LENGTH_LONG).show()
                         }
                     }
                 }
@@ -133,7 +133,7 @@ class DebtActivity : AppCompatActivity() {
                         dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
                             DebtProduct.text.clear()
                         }.addOnFailureListener { err3 ->
-                            //Toast.makeText(this, "Error ${err3.message}", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@DebtActivity, "Error ${err3.message}", Toast.LENGTH_LONG).show()
                         }
                     }
                 }
