@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 
 class DebtActivity : AppCompatActivity() {
@@ -24,7 +25,6 @@ class DebtActivity : AppCompatActivity() {
     private lateinit var adapter: ArrayAdapter<String>
     private lateinit var DebtContainer: String
     private lateinit var DateContainer: String
-    private lateinit var Counter: String
 
     private lateinit var dbRefReg: DatabaseReference
     private lateinit var dbRefDebt: DatabaseReference
@@ -49,7 +49,6 @@ class DebtActivity : AppCompatActivity() {
         btnAdd = findViewById(R.id.btnAdd)
         btnClear = findViewById(R.id.btnClearData)
 
-        Counter = ""
         spinnerList = ArrayList()
         adapter = ArrayAdapter(this@DebtActivity, android.R.layout.simple_spinner_dropdown_item,
             spinnerList
@@ -97,6 +96,8 @@ class DebtActivity : AppCompatActivity() {
         val DebtDate = DateContainer
         val DebtProdList = DebtProduct.text.toString()
         val Date = tvDate
+        val hashMap = HashMap<String, Any>()
+        hashMap["products"] = DebtProdList
         if(DebtProdList.isEmpty()){
             DebtProduct.error = "Please enter product."
         }
@@ -108,22 +109,40 @@ class DebtActivity : AppCompatActivity() {
         }
         val debtlist = CustomerDebtModel(DebtDate,DebtPrice)
         val debtprod = CustomerDebtListModel(DebtProdList)
-        if(DebtPrice.isNotEmpty() && DebtDate.isNotEmpty()&& Counter !="1"){
-            dbRefDebt.child(DebtFN).child(DebtDate).setValue(debtlist).addOnCompleteListener {
-                Toast.makeText(this, "Data Successfully added.", Toast.LENGTH_LONG).show()
-                DebtProdPrice.text.clear()
-                Counter = "1"
-            }.addOnFailureListener { err ->
-                Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+        dbRefDebt.child(DebtFN).addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(!snapshot.hasChild(DebtDate)){
+                    if(DebtPrice.isNotEmpty() && DebtDate.isNotEmpty()){
+                        dbRefDebt.child(DebtFN).child(DebtDate).setValue(debtlist).addOnCompleteListener {
+                            //Toast.makeText(this, "Data Successfully added.", Toast.LENGTH_LONG).show()
+                            DebtProdPrice.text.clear()
+                            if(DebtProdList.isNotEmpty() && DebtPrice.isNotEmpty()){
+                                dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
+                                    DebtProduct.text.clear()
+                                }.addOnFailureListener { err3 ->
+                                    //Toast.makeText(this, "Error ${err3.message}", Toast.LENGTH_LONG).show()
+                                }
+                            }
+                        }.addOnFailureListener { err ->
+                            //Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                }
+                if(snapshot.hasChild(DebtDate)){
+                    if(DebtProdList.isNotEmpty() && DebtPrice.isNotEmpty()){
+                        dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
+                            DebtProduct.text.clear()
+                        }.addOnFailureListener { err3 ->
+                            //Toast.makeText(this, "Error ${err3.message}", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                }
             }
-        }
-        if(DebtProdList.isNotEmpty() && DebtPrice.isNotEmpty()){
-            dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
-                DebtProduct.text.clear()
-            }.addOnFailureListener { err3 ->
-                Toast.makeText(this, "Error ${err3.message}", Toast.LENGTH_LONG).show()
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
             }
-        }
+        })
 
     }
     private fun clearDebtData(){
@@ -132,7 +151,6 @@ class DebtActivity : AppCompatActivity() {
         Date.setText("Date")
         DebtProdPrice.text.clear()
         DebtProduct.text.clear()
-        Counter = ""
     }
     private fun ShowData() {
         dbRefReg!!.addValueEventListener(object : ValueEventListener {
