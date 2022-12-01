@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import java.text.FieldPosition
 
-class CusAdapter (private val cusList: ArrayList<CustomerModel>) :
+class CusAdapter(private val cusList: ArrayList<CustomerModel>) :
     RecyclerView.Adapter<CusAdapter.ViewHolder>() {
 
     private lateinit var mListener: onItemClickListener
@@ -29,7 +29,6 @@ class CusAdapter (private val cusList: ArrayList<CustomerModel>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentCus = cusList[position]
         holder.tvCusName.text = currentCus.cusFN
-        holder.tvCusDebt.text = currentCus.cusPN //change this later to debt
     }
 
     override fun getItemCount(): Int {
@@ -38,7 +37,6 @@ class CusAdapter (private val cusList: ArrayList<CustomerModel>) :
 
     class ViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
         val tvCusName : TextView = itemView.findViewById(R.id.tvCusName)
-        val tvCusDebt : TextView = itemView.findViewById(R.id.tvCusDebt)
 
         init {
             itemView.setOnClickListener {

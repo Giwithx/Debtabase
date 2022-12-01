@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".SMSFragment">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SMSActivity">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/smsConstraint"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSend"
+        <Button
+            android:id="@+id/btnSendSMS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
@@ -26,7 +22,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
             tools:ignore="TextContrastCheck" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/btnCancelSend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +35,7 @@
             android:textColor="#FDF8F8"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnSend"
+            app:layout_constraintStart_toEndOf="@+id/btnSendSMS"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
             tools:ignore="TextContrastCheck" />
 
@@ -103,7 +99,7 @@
             app:layout_constraintTop_toBottomOf="@id/txtCustName">
 
             <AutoCompleteTextView
-                android:id="@+id/autoCompleteTextView"
+                android:id="@+id/SMSDropDown"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -123,5 +119,5 @@
             app:layout_constraintEnd_toStartOf="@+id/txtSMS"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

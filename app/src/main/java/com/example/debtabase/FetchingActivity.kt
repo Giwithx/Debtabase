@@ -14,6 +14,7 @@ class FetchingActivity : AppCompatActivity() {
     private lateinit var cusRecyclerView: RecyclerView
     private lateinit var tvLoadingData: TextView
     private lateinit var cusList: ArrayList<CustomerModel>
+    private lateinit var debtList: ArrayList<CustomerDebtModel>
     private lateinit var dbRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,8 +25,8 @@ class FetchingActivity : AppCompatActivity() {
         cusRecyclerView.layoutManager = LinearLayoutManager(this)
         cusRecyclerView.setHasFixedSize(true)
         tvLoadingData = findViewById(R.id.tvLoadingData)
-
         cusList = arrayListOf<CustomerModel>()
+        debtList = arrayListOf<CustomerDebtModel>()
 
         getCustomerData()
         val actionbar = supportActionBar
@@ -33,6 +34,7 @@ class FetchingActivity : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
     }
+
 
     private fun getCustomerData() {
         cusRecyclerView.visibility = View.GONE

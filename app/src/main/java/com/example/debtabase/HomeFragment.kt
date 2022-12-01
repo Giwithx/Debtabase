@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
             view.findNavController().navigate(R.id.action_homeFragment_to_register)
         }
         binding.Btnsms.setOnClickListener{ view: View->
-            view.findNavController().navigate(R.id.action_homeFragment_to_SMSFragment)
+            view.findNavController().navigate(R.id.action_homeFragment_to_SMSActivity)
         }
         return binding.root
     }

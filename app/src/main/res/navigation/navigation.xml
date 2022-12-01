@@ -22,9 +22,6 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_SMSFragment"
-            app:destination="@id/SMSFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_register"
             app:destination="@id/register" />
         <action
@@ -33,21 +30,15 @@
         <action
             android:id="@+id/action_homeFragment_to_debtActivity"
             app:destination="@id/debtActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_SMSActivity"
+            app:destination="@id/SMSActivity" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment2"
         android:name="com.example.debtabase.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
-    <fragment
-        android:id="@+id/SMSFragment"
-        android:name="com.example.debtabase.SMSFragment"
-        android:label="fragment_s_m_s"
-        tools:layout="@layout/fragment_s_m_s" >
-        <action
-            android:id="@+id/action_SMSFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
     <activity
         android:id="@+id/register"
         android:name="com.example.debtabase.Register"
@@ -68,4 +59,9 @@
         android:name="com.example.debtabase.DebtActivity"
         android:label="activity_debt"
         tools:layout="@layout/activity_debt" />
+    <activity
+        android:id="@+id/SMSActivity"
+        android:name="com.example.debtabase.SMSActivity"
+        android:label="activity_s_m_s"
+        tools:layout="@layout/activity_s_m_s" />
 </navigation>

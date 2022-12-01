@@ -12,7 +12,7 @@ import kotlin.collections.ArrayList
 
 class DebtActivity : AppCompatActivity() {
 
-    private lateinit var DebtSpinner: Spinner
+    private lateinit var DebtSpinner: AutoCompleteTextView
     private lateinit var DebtProduct: EditText
     private lateinit var DebtProdPrice: EditText
     private lateinit var tvDate: TextView
@@ -39,7 +39,7 @@ class DebtActivity : AppCompatActivity() {
         dbRefReg = FirebaseDatabase.getInstance().getReference("CustomerRegistration")
         dbRefDebt = FirebaseDatabase.getInstance().getReference("CustomerDebt")
 
-        DebtSpinner = findViewById(R.id.textInputLayout2)
+        DebtSpinner = findViewById(R.id.DebtDropDown)
         DebtProduct = findViewById(R.id.txtProdName)
         DebtProdPrice = findViewById(R.id.txtPricesInp)
         tvDate = findViewById(R.id.tvDatePicker)
@@ -48,11 +48,9 @@ class DebtActivity : AppCompatActivity() {
         btnClear = findViewById(R.id.btnClearData)
 
         spinnerList = ArrayList()
-        adapter = ArrayAdapter(this@DebtActivity, android.R.layout.simple_spinner_dropdown_item,
-            spinnerList
-        )
+        adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinnerList)
 
-        DebtSpinner.adapter = adapter
+        DebtSpinner.setAdapter(adapter)
         ShowData()
 
         btnDate.setOnClickListener {
@@ -162,19 +160,8 @@ class DebtActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (item in snapshot.children) {
                     spinnerList.add(item.child("cusFN").value.toString() +" "+ item.child("cusLN").value.toString())
-                    DebtSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                        override fun onItemSelected(
-                            parent: AdapterView<*>?,
-                            view: View,
-                            position: Int,
-                            id: Long
-                        ) {
-                            DebtContainer = DebtSpinner.selectedItem.toString()
-                        }
-
-                        override fun onNothingSelected(p0: AdapterView<*>?) {
-                            TODO("Not yet implemented")
-                        }
+                    DebtSpinner.setOnItemClickListener { adapterView, view, i, l ->
+                        DebtContainer = adapterView.getItemAtPosition(i).toString()
                     }
                 }
                 adapter.notifyDataSetChanged()
