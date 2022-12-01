@@ -54,7 +54,12 @@ class SMSActivity : AppCompatActivity() {
 
         Send.setOnClickListener {
             if(::SMSContainer.isInitialized){
-                sendSMS()
+                if(message.isNullOrEmpty()){
+                    Toast.makeText(this, "No Balance", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    sendSMS()
+                }
             }
             else{
                 Toast.makeText(this@SMSActivity, "Please input data", Toast.LENGTH_SHORT).show()
@@ -67,11 +72,12 @@ class SMSActivity : AppCompatActivity() {
         val Balance = message.last()
         val Person = SMSContainer.subSequence(12, SMSContainer.length).toString()
         val Message = "Good day $Person! Your debt balance is Php $Balance"
+        if(message.isNotEmpty()){
+            val sentPI: PendingIntent = PendingIntent.getBroadcast(this, 0, Intent("SMS_SENT"), 0)
+            SmsManager.getDefault().sendTextMessage(SMSNumber.toString(), null, Message, sentPI, null)
+            Toast.makeText(this, "Message Sent!", Toast.LENGTH_SHORT).show()
 
-        val sentPI: PendingIntent = PendingIntent.getBroadcast(this, 0, Intent("SMS_SENT"), 0)
-        SmsManager.getDefault().sendTextMessage(SMSNumber.toString(), null, Message, sentPI, null)
-        Toast.makeText(this, "Message Sent!", Toast.LENGTH_SHORT).show()
-
+        }
     }
     private fun checkPermissions(){
         if(ActivityCompat.checkSelfPermission(this,android.Manifest.permission.SEND_SMS) !=PackageManager.PERMISSION_GRANTED){
