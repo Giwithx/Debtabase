@@ -4,6 +4,7 @@ import android.app.PendingIntent
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Message
 import android.telephony.SmsManager
@@ -68,15 +69,23 @@ class SMSActivity : AppCompatActivity() {
     }
     private fun sendSMS(){
         val Info = SMSContainer
-        val SMSNumber = Info.subSequence(0,10)
+        val SMSNumber = Info.subSequence(1,11).toString()
         val Balance = message.last()
         val Person = SMSContainer.subSequence(12, SMSContainer.length).toString()
         val Message = "Good day $Person! Your debt balance is Php $Balance"
-        if(message.isNotEmpty()){
-            val sentPI: PendingIntent = PendingIntent.getBroadcast(this, 0, Intent("SMS_SENT"), 0)
-            SmsManager.getDefault().sendTextMessage(SMSNumber.toString(), null, Message, sentPI, null)
-            Toast.makeText(this, "Message Sent!", Toast.LENGTH_SHORT).show()
+        try{
+            val smsManager:SmsManager
+            if (Build.VERSION.SDK_INT>=23){
+                smsManager = this.getSystemService(SmsManager::class.java)
+            }
+            else{
+                smsManager = SmsManager.getDefault()
+            }
+            smsManager.sendTextMessage("+63$SMSNumber", null,Message,null,null)
 
+            Toast.makeText(this, "Message Sent!", Toast.LENGTH_SHORT).show()
+        } catch (e: Exception){
+            Toast.makeText(this, "Please enter all the data..", Toast.LENGTH_SHORT).show()
         }
     }
     private fun checkPermissions(){
