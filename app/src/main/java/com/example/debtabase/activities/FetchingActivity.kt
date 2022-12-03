@@ -17,8 +17,7 @@ class FetchingActivity : AppCompatActivity() {
 
     private lateinit var cusRecyclerView: RecyclerView
     private lateinit var tvLoadingData: TextView
-    private lateinit var cusList: ArrayList<CustomerModel>
-    private lateinit var debtList: ArrayList<CustomerDebtModel>
+    private lateinit var cusList: ArrayList<CustomerDebtModel>
     private lateinit var dbRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +28,7 @@ class FetchingActivity : AppCompatActivity() {
         cusRecyclerView.layoutManager = LinearLayoutManager(this)
         cusRecyclerView.setHasFixedSize(true)
         tvLoadingData = findViewById(R.id.tvLoadingData)
-        cusList = arrayListOf<CustomerModel>()
-        debtList = arrayListOf<CustomerDebtModel>()
+        cusList = arrayListOf<CustomerDebtModel>()
 
         getCustomerData()
         val actionbar = supportActionBar
@@ -44,15 +42,17 @@ class FetchingActivity : AppCompatActivity() {
         cusRecyclerView.visibility = View.GONE
         tvLoadingData.visibility = View.VISIBLE
 
-        dbRef = FirebaseDatabase.getInstance().getReference("CustomerRegistration")
+        dbRef = FirebaseDatabase.getInstance().getReference("CustomerDebt")
 
         dbRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 cusList.clear()
                 if (snapshot.exists()){
                     for (cusSnap in snapshot.children){
-                        val cusData = cusSnap.getValue(CustomerModel::class.java)
-                        cusList.add(cusData!!)
+                        for (item in cusSnap.children){
+                            val cusData = item.getValue(CustomerDebtModel::class.java)
+                            cusList.add(cusData!!)
+                        }
                     }
                     val mAdapter = CusAdapter(cusList)
                     cusRecyclerView.adapter = mAdapter
@@ -60,10 +60,9 @@ class FetchingActivity : AppCompatActivity() {
                     mAdapter.setOnItemClickListener(object : CusAdapter.onItemClickListener {
                         override fun onItemClick(position: Int) {
                             val intent = Intent(this@FetchingActivity, CustomerDetailsActivity::class.java)
-                            intent.putExtra("cusId", cusList[position].cusId)
-                            intent.putExtra("cusFN", cusList[position].cusFN)
-                            intent.putExtra("cusLN", cusList[position].cusLN)
-                            intent.putExtra("cusPN", cusList[position].cusPN)
+                            intent.putExtra("customerFN", cusList[position].customerFN)
+                            intent.putExtra("debtBalance", cusList[position].debtBalance.toString())
+                            intent.putExtra("debtDueDate", cusList[position].debtDueDate)
                             startActivity(intent)
                         }
                     })

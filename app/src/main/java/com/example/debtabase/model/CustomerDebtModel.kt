@@ -1,7 +1,8 @@
 package com.example.debtabase.model
 
 data class CustomerDebtModel(
-    var DebtDueDate: String? = null,
-    var DebtBalance: Float? = null
+    var customerFN: String? = null,
+    var debtDueDate: String? = null,
+    var debtBalance: Float? = null
 )
 

@@ -6,31 +6,12 @@
     android:padding="10dp">
 
     <EditText
-        android:id="@+id/txtFN"
+        android:id="@+id/txtDebtBalance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/raleway"
-        android:hint="First Name"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/txtLN"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:fontFamily="@font/raleway"
-        android:hint="Last Name" />
-
-    <EditText
-        android:id="@+id/txtPhoneNum"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:fontFamily="@font/raleway"
-        android:hint="Phone Number"
+        android:hint="Debt Balance"
         android:inputType="textPersonName" />
 
     <Button

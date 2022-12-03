@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="85dp"
         android:background="@drawable/btn_orange_bg"
         android:fontFamily="@font/bebas_neue"
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="75dp"
         android:background="@drawable/btn_orange_bg"
         android:fontFamily="@font/bebas_neue"
@@ -71,7 +71,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/bebas_neue"
                     android:gravity="center"
-                    android:text="Customer ID"
+                    android:text="Customer Name"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -83,7 +83,7 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvCusId"
+                    android:id="@+id/tvCusName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -121,7 +121,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/bebas_neue"
                     android:gravity="center"
-                    android:text="First Name"
+                    android:text="Debt Balance"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -133,7 +133,7 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvCusFN"
+                    android:id="@+id/tvDebtBalance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -172,7 +172,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/bebas_neue"
                     android:gravity="center"
-                    android:text="Last Name"
+                    android:text="Due Date"
                     android:textColor="@color/black"
 
 
@@ -186,7 +186,7 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvCusLN"
+                    android:id="@+id/tvDDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -202,60 +202,6 @@
 
         </LinearLayout>
 
-
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:orientation="horizontal"
-            android:weightSum="2"
-
-            >
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.6"
-                android:background="@color/teal_200">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-
-                    android:fontFamily="@font/bebas_neue"
-                    android:gravity="center"
-                    android:text="Phone Number"
-                    android:textColor="@color/black"
-
-
-                    android:textSize="20sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.4">
-
-                <TextView
-                    android:id="@+id/tvCusPN"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-
-                    />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
 
 
     </LinearLayout>

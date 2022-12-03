@@ -10,13 +10,13 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.debtabase.model.CustomerModel
 import com.example.debtabase.R
+import com.example.debtabase.model.CustomerDebtModel
 import com.google.firebase.database.FirebaseDatabase
 
 class CustomerDetailsActivity: AppCompatActivity() {
-    private lateinit var tvCusId: TextView
-    private lateinit var tvCusFN: TextView
-    private lateinit var tvCusLN: TextView
-    private lateinit var tvCusPN: TextView
+    private lateinit var tvCusName: TextView
+    private lateinit var tvDebtBalance: TextView
+    private lateinit var tvDDate: TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
 
@@ -30,13 +30,14 @@ class CustomerDetailsActivity: AppCompatActivity() {
 
         btnUpdate.setOnClickListener {
             openUpdateDialog(
-                intent.getStringExtra("cusId").toString(),
-                intent.getStringExtra("cusFN").toString()
+                intent.getStringExtra("customerFN").toString(),
+                intent.getStringExtra("debtDueDate").toString()
             )
         }
         btnDelete.setOnClickListener {
             deleteRecord(
-                intent.getStringExtra("cusId").toString()
+                intent.getStringExtra("customerFN").toString(),
+                intent.getStringExtra("debtDueDate").toString()
             )
         }
         val actionbar = supportActionBar
@@ -46,8 +47,8 @@ class CustomerDetailsActivity: AppCompatActivity() {
 
     }
     private fun openUpdateDialog(
-        cusId: String,
-        cusFN: String
+        customerFN: String,
+        debtDueDate: String
     ) {
         val mDialog = AlertDialog.Builder(this)
         val inflater = layoutInflater
@@ -55,70 +56,60 @@ class CustomerDetailsActivity: AppCompatActivity() {
 
         mDialog.setView(mDialogView)
 
-        val txtFN = mDialogView.findViewById<EditText>(R.id.txtFN)
-        val txtLN = mDialogView.findViewById<EditText>(R.id.txtLN)
-        val txtPhoneNum = mDialogView.findViewById<EditText>(R.id.txtPhoneNum)
+        val txtDebtBalance = mDialogView.findViewById<EditText>(R.id.txtDebtBalance)
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
-        txtFN.setText(intent.getStringExtra("cusFN").toString())
-        txtLN.setText(intent.getStringExtra("cusLN").toString())
-        txtPhoneNum.setText(intent.getStringExtra("cusPN").toString())
+        txtDebtBalance.setText(intent.getStringExtra("debtBalance").toString())
 
-        mDialog.setTitle("Updating $cusFN Record")
+        mDialog.setTitle("Updating $customerFN Record")
 
         val alertDialog = mDialog.create()
         alertDialog.show()
 
         btnUpdateData.setOnClickListener {
             updateEmpData(
-                cusId,
-                txtFN.text.toString(),
-                txtLN.text.toString(),
-                txtPhoneNum.text.toString()
+                customerFN,
+                debtDueDate,
+                txtDebtBalance.text.toString()
             )
 
             Toast.makeText(applicationContext, "Customer Data Updated", Toast.LENGTH_LONG).show()
 
-            tvCusFN.text = txtFN.text.toString()
-            tvCusLN.text = txtLN.text.toString()
-            tvCusPN.text = txtPhoneNum.text.toString()
+            tvDebtBalance.text = txtDebtBalance.text.toString()
 
             alertDialog.dismiss()
         }
     }
 
     private fun updateEmpData(
-        id: String,
-        first_name: String,
-        last_name: String,
-        phone_num: String
+        customer_name: String,
+        due_date: String,
+        debt_balance: String
     ) {
-        val dbRef = FirebaseDatabase.getInstance().getReference("CustomerRegistration").child(id)
-        val cusInfo = CustomerModel(id, first_name, last_name, phone_num)
+        val dbRef = FirebaseDatabase.getInstance().getReference("CustomerDebt").child(customer_name).child(due_date)
+        val cusInfo = CustomerDebtModel(customer_name, due_date, debt_balance.toFloat())
         dbRef.setValue(cusInfo)
     }
 
     private fun initView() {
-        tvCusId = findViewById(R.id.tvCusId)
-        tvCusFN = findViewById(R.id.tvCusFN)
-        tvCusLN = findViewById(R.id.tvCusLN)
-        tvCusPN = findViewById(R.id.tvCusPN)
+        tvCusName = findViewById(R.id.tvCusName)
+        tvDebtBalance = findViewById(R.id.tvDebtBalance)
+        tvDDate = findViewById(R.id.tvDDate)
 
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
     }
 
     private fun setValuesToViews() {
-        tvCusId.text = intent.getStringExtra("cusId")
-        tvCusFN.text = intent.getStringExtra("cusFN")
-        tvCusLN.text = intent.getStringExtra("cusLN")
-        tvCusPN.text = intent.getStringExtra("cusPN")
+        tvCusName.text = intent.getStringExtra("customerFN")
+        tvDebtBalance.text = intent.getStringExtra("debtBalance")
+        tvDDate.text = intent.getStringExtra("debtDueDate")
 
     }
 
-    private fun deleteRecord(id: String){
-        val dbRef = FirebaseDatabase.getInstance().getReference("CustomerRegistration").child(id)
+    private fun deleteRecord(customer_name: String, debtDueDate: String){
+        val dbRef = FirebaseDatabase.getInstance().getReference("CustomerDebt/$customer_name").child(debtDueDate)
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener {

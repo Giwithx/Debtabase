@@ -103,7 +103,7 @@ class DebtActivity : AppCompatActivity() {
         if (Date.text.isEmpty() || Date.text.equals("Date")){
             Toast.makeText(this@DebtActivity, "Please input Date", Toast.LENGTH_SHORT).show()
         }
-        val debtlist = CustomerDebtModel(DebtDate,DebtPrice)
+        val debtlist = CustomerDebtModel(DebtFN,DebtDate,DebtPrice)
         val debtprod = CustomerDebtListModel(DebtProdList, DebtPrice)
         dbRefDebt.child(DebtFN).addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
