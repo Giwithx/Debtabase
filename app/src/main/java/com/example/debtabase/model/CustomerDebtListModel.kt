@@ -1,4 +1,4 @@
-package com.example.debtabase
+package com.example.debtabase.model
 
 data class CustomerDebtListModel(
     var products: String? = null,

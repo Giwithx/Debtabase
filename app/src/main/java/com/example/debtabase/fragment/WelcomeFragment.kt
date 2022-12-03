@@ -1,4 +1,4 @@
-package com.example.debtabase
+package com.example.debtabase.fragment
 
 import android.os.Bundle
 import android.view.*
@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.example.debtabase.databinding.FragmentHomeBinding
+import com.example.debtabase.R
 import com.example.debtabase.databinding.FragmentWelcomeBinding
 
 

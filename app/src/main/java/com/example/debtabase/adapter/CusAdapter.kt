@@ -1,12 +1,12 @@
-package com.example.debtabase
+package com.example.debtabase.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SpinnerAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import java.text.FieldPosition
+import com.example.debtabase.R
+import com.example.debtabase.model.CustomerModel
 
 class CusAdapter(private val cusList: ArrayList<CustomerModel>) :
     RecyclerView.Adapter<CusAdapter.ViewHolder>() {

@@ -1,4 +1,4 @@
-package com.example.debtabase
+package com.example.debtabase.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.debtabase.adapter.CusAdapter
+import com.example.debtabase.model.CustomerDebtModel
+import com.example.debtabase.model.CustomerModel
+import com.example.debtabase.R
 import com.google.firebase.database.*
 
 class FetchingActivity : AppCompatActivity() {
@@ -53,7 +57,7 @@ class FetchingActivity : AppCompatActivity() {
                     val mAdapter = CusAdapter(cusList)
                     cusRecyclerView.adapter = mAdapter
 
-                    mAdapter.setOnItemClickListener(object : CusAdapter.onItemClickListener{
+                    mAdapter.setOnItemClickListener(object : CusAdapter.onItemClickListener {
                         override fun onItemClick(position: Int) {
                             val intent = Intent(this@FetchingActivity, CustomerDetailsActivity::class.java)
                             intent.putExtra("cusId", cusList[position].cusId)

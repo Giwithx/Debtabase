@@ -1,19 +1,14 @@
-package com.example.debtabase
+package com.example.debtabase.activities
 
-import android.app.PendingIntent
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Message
 import android.telephony.SmsManager
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.example.debtabase.R
 import com.google.firebase.database.*
-import java.util.jar.Manifest
 
 
 class SMSActivity : AppCompatActivity() {

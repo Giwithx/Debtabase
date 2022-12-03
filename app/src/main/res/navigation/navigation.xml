@@ -6,7 +6,7 @@
     app:startDestination="@id/welcomeFragment2">
     <fragment
         android:id="@+id/welcomeFragment2"
-        android:name="com.example.debtabase.WelcomeFragment"
+        android:name="com.example.debtabase.fragment.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.debtabase.HomeFragment"
+        android:name="com.example.debtabase.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -36,32 +36,32 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment2"
-        android:name="com.example.debtabase.AboutFragment"
+        android:name="com.example.debtabase.fragment.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
     <activity
         android:id="@+id/register"
-        android:name="com.example.debtabase.Register"
+        android:name="com.example.debtabase.activities.Register"
         android:label="fragment_register"
         tools:layout="@layout/activity_register" />
     <activity
         android:id="@+id/fetchingActivity"
-        android:name="com.example.debtabase.FetchingActivity"
+        android:name="com.example.debtabase.activities.FetchingActivity"
         android:label="activity_fetching"
         tools:layout="@layout/activity_fetching" />
     <activity
         android:id="@+id/customerDetailsActivity"
-        android:name="com.example.debtabase.CustomerDetailsActivity"
+        android:name="com.example.debtabase.activities.CustomerDetailsActivity"
         android:label="activity_customer_details"
         tools:layout="@layout/activity_customer_details" />
     <activity
         android:id="@+id/debtActivity"
-        android:name="com.example.debtabase.DebtActivity"
+        android:name="com.example.debtabase.activities.DebtActivity"
         android:label="activity_debt"
         tools:layout="@layout/activity_debt" />
     <activity
         android:id="@+id/SMSActivity"
-        android:name="com.example.debtabase.SMSActivity"
+        android:name="com.example.debtabase.activities.SMSActivity"
         android:label="activity_s_m_s"
         tools:layout="@layout/activity_s_m_s" />
 </navigation>

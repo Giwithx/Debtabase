@@ -1,10 +1,12 @@
-package com.example.debtabase
+package com.example.debtabase.activities
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.debtabase.model.CustomerDebtListModel
+import com.example.debtabase.model.CustomerDebtModel
+import com.example.debtabase.R
 import com.google.firebase.database.*
 import java.util.*
 import kotlin.collections.ArrayList
