@@ -10,23 +10,24 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="left"
-        android:layout_gravity="left"
+        android:gravity="end"
+        android:layout_gravity="end"
         android:orientation="horizontal">
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="118dp"
-            android:src="@drawable/user" />
+            android:src="@drawable/user"
+            android:contentDescription="TODO" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="right"
+        android:gravity="start"
         android:padding="16dp"
-        android:layout_gravity="right"
+        android:layout_gravity="start"
         android:orientation="vertical">
 
 
