@@ -108,11 +108,11 @@ class DebtActivity : AppCompatActivity() {
         dbRefDebt.child(DebtFN).addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(!snapshot.hasChild(DebtDate)){
-                    if(DebtPrice!=null && DebtDate.isNotEmpty()){
+                    if(DebtPrice!=null && DebtDate.isNotEmpty() && DebtProdList.isNotBlank()){
                         dbRefDebt.child(DebtFN).child(DebtDate).setValue(debtlist).addOnCompleteListener {
                             Toast.makeText(this@DebtActivity, "Data Successfully added.", Toast.LENGTH_LONG).show()
                             DebtProdPrice.text.clear()
-                            if(DebtPrice!=null && DebtDate.isNotEmpty()){
+                            if(DebtPrice!=null && DebtDate.isNotEmpty() && DebtProdList.isNotBlank()){
                                 dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
                                     DebtProduct.text.clear()
                                     for(item in snapshot.children){
@@ -129,7 +129,7 @@ class DebtActivity : AppCompatActivity() {
                     }
                 }
                 if(snapshot.hasChild(DebtDate)){
-                    if(DebtPrice!=null && DebtDate.isNotEmpty()){
+                    if(DebtPrice!=null && DebtDate.isNotEmpty() && DebtProdList.isNotBlank()){
                         dbRefDebt.child(DebtFN).child(DebtDate).child("debtProd").push().setValue(debtprod).addOnCompleteListener {
                             DebtProduct.text.clear()
                             DebtProdPrice.text.clear()
